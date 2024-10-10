@@ -1,0 +1,13 @@
+DELIMITER //
+CREATE PROCEDURE updateStatusPembayaran(IN p_no_pendaftaran VARCHAR(50), IN p_status ENUM('Belum Bayar', 'Sudah Bayar'))
+BEGIN
+    UPDATE siswa
+    SET status_pembayaran = p_status
+    WHERE no_pendaftaran = p_no_pendaftaran;
+END //
+
+DELIMITER ;
+Store procedure ini bisa dipanggil dengan:
+CALL updateStatusPembayaran('REG20241001', 'Sudah Bayar');
+
+
