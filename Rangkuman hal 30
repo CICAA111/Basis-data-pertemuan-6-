@@ -1,0 +1,33 @@
+Tipe-tipe Data dalam SQL:
+Numeric (Numerik):
+
+Tipe data yang menyimpan nilai berupa angka.
+Exact Numeric:
+INTEGER: Angka bulat (positif atau negatif) tanpa desimal.
+SMALLINT: Versi INTEGER dengan ukuran penyimpanan lebih kecil.
+BIGINT: Angka bulat dengan rentang yang lebih besar dari INTEGER.
+NUMERIC (p, s): Angka dengan komponen pecahan, dimana ‘p’ menentukan presisi dan ‘s’ menentukan skala.
+DECIMAL (p, s): Mirip NUMERIC, tetapi dapat menangani presisi lebih tinggi.
+Approximate Numeric:
+REAL (s): Angka dengan presisi tunggal (floating-point).
+DOUBLE PRECISION (p, s): Angka dengan presisi ganda.
+FLOAT (p, s): Mengizinkan spesifikasi presisi yang fleksibel.
+String (Karakter):
+
+Tipe data untuk menyimpan informasi alfanumerik.
+CHAR (n): Karakter dengan panjang tetap.
+VARCHAR (n): Karakter dengan panjang variabel.
+CLOB: Menyimpan data karakter dalam jumlah besar, seperti dokumen panjang.
+Date and Time:
+
+DATE: Menyimpan tanggal (tahun, bulan, hari).
+TIME: Menyimpan waktu (jam, menit, detik).
+DATETIME: Menyimpan kombinasi tanggal dan waktu.
+TIMESTAMP: Mirip dengan DATETIME tetapi dengan rentang nilai terbatas.
+Boolean:
+
+Menyimpan nilai logika TRUE, FALSE, atau NULL untuk perbandingan data.
+User-Defined Data Type (UDT):
+
+Tipe data yang didefinisikan oleh pengguna, berdasarkan tipe data yang ada, untuk memudahkan pengelolaan dan fleksibilitas.
+Bab ini menekankan pentingnya memilih tipe data yang s
