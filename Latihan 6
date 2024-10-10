@@ -117,3 +117,23 @@ GROUP BY prodi;
 Menghapus hanya data tabel 
 TRUNCATE TABLE info_mahasiswa;
 TRUNCATE TABLE Prodi;
+
+
+###CREATE PROCEDURE
+DELIMITER $$
+
+CREATE PROCEDURE InsertInfoMahasiswa()
+BEGIN
+    INSERT INTO info_mahasiswa (NIM, nama, prodi, bayar)
+    VALUES 
+        ('2023071055', 'Tatang Manalu', 'INF', '10'),
+        ('2023071070', 'Hera Manalu', 'SIF', '20'),
+        ('2023071071', 'Andi Rahmat', 'TS', '30'),
+        ('2023071072', 'Siti Nurcica', 'ARS', '40'),
+        ('2023071073', 'Crazy killer', 'INF', '50'),
+        ('2023071074', 'Syifa Nur', 'ARS', '10'),
+        ('2023071075', 'Rafi Kurniawan', 'SIF', '200'),
+        ('2023071076', 'Nabil Mahesa', 'INF', '10');
+END$$
+
+DELIMITER ;
