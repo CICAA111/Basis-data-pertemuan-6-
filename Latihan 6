@@ -1,0 +1,119 @@
+CREATE TABLE info_mahasiswa (
+    NIM INT PRIMARY KEY AUTO_INCREMENT,
+    nama VARCHAR(100),
+    prodi VARCHAR(50),
+    bayar VARCHAR(50)
+);
+
+
+INSERT INTO info_mahasiswa (NIM, nama, prodi, bayar)
+VALUES 
+('2023071055', 'Tatang Manalu', 'INF', '10'),
+('2023071070', 'Hera Manalu', 'SIF', '20'),
+('2023071071', 'Andi Rahmat', 'TS', '30'),
+('2023071072', 'Siti Nurcica', 'ARS', '40'),
+('2023071073', 'Crazy killer', 'INF', '50'),
+('2023071074', 'Syifa Nur', 'ARS', '10'),
+('2023071075', 'Rafi Kurniawan', 'SIF', '200'),
+('2023071076', 'Nabil Mahesa', 'INF', '10');
+
+
+select * from prodi;
+select * from info_mahasiswa;
+
+SELECT prodi, SUM(bayar) AS total_bayar
+FROM info_mahasiswa
+GROUP BY prodi;
+
+SELECT prodi, AVG(bayar) AS rata_rata_bayar
+FROM info_mahasiswa
+GROUP BY prodi;
+
+SELECT prodi, AVG(bayar) AS rata_rata_bayar
+FROM info_mahasiswa
+GROUP BY prodi;
+
+SELECT prodi, COUNT(*) AS jumlah_mahasiswa
+FROM info_mahasiswa
+GROUP BY prodi;
+
+SELECT prodi, MAX(bayar) AS pembayaran_tertinggi
+FROM info_mahasiswa
+GROUP BY prodi;
+
+SELECT prodi, MIN(bayar) AS pembayaran_terendah
+FROM info_mahasiswa
+GROUP BY prodi;
+
+SELECT prodi, VARIANCE(bayar) AS variansi_bayar
+FROM info_mahasiswa
+GROUP BY prodi;
+SELECT prodi, STDDEV(bayar) AS standar_deviasi_bayar
+FROM info_mahasiswa
+GROUP BY prodi;
+
+
+SELECT prodi, GROUP_CONCAT(nama) AS daftar_mahasiswa
+FROM info_mahasiswa
+GROUP BY prodi;
+
+SELECT DISTINCT prodi FROM info_mahasiswa;
+
+#Menampilkan hanya prodi
+SELECT Prodi, COUNT(*) AS jumlah_mahasiswa
+FROM info_mahasiswa
+GROUP BY Prodi;
+
+1.COUNT()
+Menghitung jumlah baris dalam satu grup atau tabel. Misalnya, menghitung berapa banyak mahasiswa dalam setiap **prodi**.
+
+SELECT prodi, COUNT(*) AS jumlah_mahasiswa
+FROM info_mahasiswa
+GROUP BY prodi;
+
+2. MAX()
+Mengembalikan nilai maksimum dari kolom tertentu dalam sebuah grup. Misalnya, mencari pembayaran tertinggi per **prodi**.
+
+SELECT prodi, MAX(bayar) AS pembayaran_tertinggi
+FROM info_mahasiswa
+GROUP BY prodi;
+
+3. **`MIN()
+Mengembalikan nilai minimum dari kolom tertentu dalam sebuah grup. Misalnya, mencari pembayaran terendah per **prodi**.
+
+```sql
+SELECT prodi, MIN(bayar) AS pembayaran_terendah
+FROM info_mahasiswa
+GROUP BY prodi;
+```
+
+4. **`VARIANCE()`** (atau **`VAR_POP()`** dalam MySQL)
+Menghitung varians populasi, yaitu mengukur seberapa tersebar data dalam sebuah kolom. Contoh untuk menghitung variansi pembayaran per **prodi**:
+
+```sql
+SELECT prodi, VARIANCE(bayar) AS variansi_bayar
+FROM info_mahasiswa
+GROUP BY prodi;
+```
+
+5. **`STDDEV()`** (atau **`STDDEV_POP()`** dalam MySQL)
+Menghitung standar deviasi populasi untuk melihat seberapa tersebar nilai pembayaran dalam setiap **prodi**.
+
+```sql
+SELECT prodi, STDDEV(bayar) AS standar_deviasi_bayar
+FROM info_mahasiswa
+GROUP BY prodi;
+```
+
+6. **`GROUP_CONCAT()`**
+Menggabungkan beberapa nilai dari kolom yang sama ke dalam satu string, dipisahkan oleh koma atau karakter lain yang diinginkan. Misalnya, untuk melihat daftar nama mahasiswa per **prodi**.
+
+```sql
+SELECT prodi, GROUP_CONCAT(nama) AS daftar_mahasiswa
+FROM info_mahasiswa
+GROUP BY prodi;
+```
+
+Menghapus hanya data tabel 
+TRUNCATE TABLE info_mahasiswa;
+TRUNCATE TABLE Prodi;
