@@ -1,0 +1,7 @@
+- Menampilkan Data Siswa Berdasarkan Nomor Pendaftaran:
+SELECT * FROM siswa
+WHERE no_pendaftaran = 'REG20241001';
+- Menampilkan Hasil Tes Berdasarkan ID Siswa:
+SELECT * FROM hasil_tes
+WHERE id_siswa = 1;
+
