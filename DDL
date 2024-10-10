@@ -1,0 +1,28 @@
+CREATE TABLE siswa (
+    id_siswa INT PRIMARY KEY AUTO_INCREMENT,
+    nama VARCHAR(100),
+    tanggal_lahir DATE,
+    no_ktp VARCHAR(20) UNIQUE,
+    no_pendaftaran VARCHAR(50),
+    status_pembayaran ENUM('Belum Bayar', 'Sudah Bayar')
+);
+
+-- Tabel hasil tes
+CREATE TABLE hasil_tes (
+    id_tes INT PRIMARY KEY AUTO_INCREMENT,
+    id_siswa INT,
+    nilai DECIMAL(5,2),
+    hasil VARCHAR(50),
+    FOREIGN KEY (id_siswa) REFERENCES siswa(id_siswa)
+);
+
+-- Tabel pembayaran
+CREATE TABLE pembayaran (
+    id_pembayaran INT PRIMARY KEY AUTO_INCREMENT,
+    id_siswa INT,
+    jumlah DECIMAL(10,2),
+    tanggal DATE,
+    status ENUM('Pending', 'Selesai'),
+    FOREIGN KEY (id_siswa) REFERENCES siswa(id_siswa)
+);
+```
