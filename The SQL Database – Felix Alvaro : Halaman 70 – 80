@@ -1,0 +1,42 @@
+The SQL Database – Felix Alvaro : Halaman 70 – 80 
+SQL Syntax
+
+-- 1. Membuat User-Defined Data Types (UDT) untuk mata uang
+CREATE TYPE USDollar AS DECIMAL(9, 2);
+CREATE TYPE UKPound AS DECIMAL(9, 2);
+
+-- 2. Membuat tabel untuk faktur di Amerika
+CREATE TABLE AmericaInvoice (
+    InvoiceID INTEGER PRIMARY KEY,
+    CustomerID INTEGER,
+    OrderID INTEGER,
+    TotalSaleAmt USDollar,
+    ShippingFee USDollar
+);
+
+-- 3. Membuat tabel untuk faktur di Inggris
+CREATE TABLE UnitedKingdomInvoice (
+    InvoiceID INTEGER PRIMARY KEY,
+    CustomerID INTEGER,
+    OrderID INTEGER,
+    TotalSaleAmt UKPound,
+    ShippingFee UKPound
+);
+
+-- 4. Membuat tabel produk dengan berbagai tipe data
+CREATE TABLE Products (
+    ProductID INTEGER PRIMARY KEY,
+    ProductName VARCHAR(100),
+    Price NUMERIC(10, 2),
+    Quantity INTEGER,
+    CreatedAt DATETIME
+);
+
+-- 5. Membuat tabel untuk menyimpan informasi pelanggan
+CREATE TABLE Customers (
+    CustomerID INTEGER PRIMARY KEY,
+    CustomerName VARCHAR(100),
+    Email VARCHAR(255),
+    IsActive BOOLEAN,
+    RegistrationDate DATE
+);
