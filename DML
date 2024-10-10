@@ -1,0 +1,10 @@
+- Menambahkan Data Siswa Baru:
+INSERT INTO siswa (nama, tanggal_lahir, no_ktp, no_pendaftaran, status_pembayaran)
+VALUES ('Siti Nurcica', '2001-12-15', '1234567890123456', 'REG20241001', 'Belum Bayar');
+- Memperbarui Status Pembayaran:
+UPDATE siswa
+SET status_pembayaran = 'Sudah Bayar'
+WHERE no_pendaftaran = 'REG20241001';
+- Memasukkan Hasil Tes:
+INSERT INTO hasil_tes (id_siswa, nilai, hasil)
+VALUES (1, 85.5, 'Lulus');
